@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Công Viên Nước</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Logo">
+            </a>
+            <div class="search">
+                <input type="text" id="searchInput" placeholder="Nhập từ khóa...">
+                <button id="searchButton"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="language">
+                <select id="languageSelect" onchange="changeLanguage()">
+                    <option value="vi">Tiếng Việt</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+        </header>
+
+        <nav class="nav">
+            <a href="#home" onclick="showContent('home.html')"><i class="fas fa-home"></i> Trang Chủ</a>
+            <a href="#services" onclick="showContent('services.html')"><i class="fas fa-concierge-bell"></i> Dịch Vụ</a>
+            <a href="#news" onclick="showContent('news.html')"><i class="fas fa-newspaper"></i> Tin Tức</a>
+            <a href="#about" onclick="showContent('about.html')"><i class="fas fa-info-circle"></i> Giới Thiệu</a>
+            <a href="#tickets" onclick="showContent('tickets.html')" class="buy-tickets"><i class="fas fa-ticket-alt"></i> Mua Vé</a>
+            <a href="#promotions" onclick="showContent('promotions.html')"><i class="fas fa-tags"></i> Khuyến Mãi</a>
+        </nav>
+
+        <main class="info" id="info">
+            <div class="loading">Đang tải nội dung...</div>
+        </main>
+
+        <footer class="footer">
+            <div class="quick-contact">
+                <h3>Liên Hệ Nhanh</h3>
+                <p>Email: <a href="mailto:contact@congviennuoc.com">huykenzo2005@gmail.com</a></p>
+                <p>Facebook: <a href="https://www.facebook.com/huykenzo5">Lê Nhật Huy</a></p>
+                <p>Địa Chỉ: 275 Beachway Keansburg</p>
+                <p>Giờ Mở Cửa: 8:00 AM - 6:00 PM hàng ngày</p>
+            </div>
+            <p id="footerText">© 2024 Keansburg Amusement Park. Tất cả quyền được bảo lưu.</p>
+            <p>Liên Hệ: <a href="tel:+84123456789">+84 328 569 010</a></p>
+            <p>Trang Web: <a href="https://keansburgamusementpark.mypressonline.com/">Keansburg Amusement Park</a></p>
+        </footer>
+    </div>
+
+    <script>
+        function showContent(page) {
+            $('#info').fadeOut(200, function() {
+                $('#info').load(page, function() {
+                    $('#info').fadeIn(200);
+                });
+            });
+        }
+
+        $(document).ready(function() {
+            showContent('home.html'); // Tải trang chủ khi mở
+        });
+
+        function changeLanguage() {
+            // Hàm chuyển đổi ngôn ngữ (có thể thêm logic nếu cần)
+            alert("Chức năng chuyển đổi ngôn ngữ chưa được triển khai.");
+        }
+
+        $('#searchButton').click(function() {
+            const query = $('#searchInput').val();
+            if (query) {
+                // Hàm xử lý tìm kiếm (có thể thêm logic tìm kiếm)
+                alert("Tìm kiếm cho: " + query);
+            } else {
+                alert("Vui lòng nhập từ khóa tìm kiếm.");
+            }
+        });
+    </script>
+</body>
+</html>

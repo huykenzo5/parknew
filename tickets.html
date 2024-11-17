@@ -1,0 +1,70 @@
+<div id="tickets" class="content-section">
+    <h2 id="ticketTitle">Mua Vé</h2>
+    <p id="ticketDescription">Chào mừng bạn đến với công viên giải trí ABC! Nơi mang lại những trải nghiệm thú vị cho cả gia đình.</p>
+    
+    <h3>Giá Vé Chi Tiết</h3>
+    <ul class="ticket-pricing">
+        <li><strong>Vé Người Lớn:</strong> 200.000 VNĐ</li>
+        <li><strong>Vé Trẻ Em:</strong> 100.000 VNĐ (dưới 1.2m)</li>
+        <li><strong>Vé Gia Đình:</strong> 500.000 VNĐ (2 người lớn + 2 trẻ em)</li>
+    </ul>
+
+    <h3>Thông Tin Mua Vé</h3>
+    <form id="ticketForm" class="ticket-form">
+        <label for="ticketType">Chọn loại vé:</label>
+        <select id="ticketType" required>
+            <option value="" disabled selected>-- Chọn loại vé --</option>
+            <option value="adult">Vé Người Lớn - 200.000 VNĐ</option>
+            <option value="child">Vé Trẻ Em - 100.000 VNĐ</option>
+            <option value="family">Vé Gia Đình (2 người lớn + 2 trẻ em) - 500.000 VNĐ</option>
+        </select>
+
+        <h4>Thông Tin Người Mua</h4>
+        <div class="form-group">
+            <label for="name">Họ và tên:</label>
+            <input type="text" id="name" required placeholder="Nhập họ và tên">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" required placeholder="Nhập email">
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Số điện thoại:</label>
+            <input type="tel" id="phone" pattern="[0-9]{10}" required placeholder="10 chữ số">
+        </div>
+
+        <h4>Thông Tin Thanh Toán</h4>
+        <div class="form-group">
+            <label for="bank">Chọn ngân hàng thanh toán:</label>
+            <select id="bank" required>
+                <option value="" disabled selected>-- Chọn ngân hàng --</option>
+                <option value="vietcom">Vietcombank</option>
+                <option value="techcom">Techcombank</option>
+                <option value="agribank">Agribank</option>
+                <option value="bidv">BIDV</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="accountNumber">Số tài khoản ngân hàng:</label>
+            <input type="text" id="accountNumber" required placeholder="Nhập số tài khoản">
+        </div>
+
+        <button type="submit" class="submit-button">Xác Nhận Mua Vé</button>
+    </form>
+
+    <div id="purchaseConfirmation" style="display:none; margin-top: 20px;">
+        <h3>Xác Nhận Đặt Vé</h3>
+        <p>Cảm ơn bạn đã đặt vé! Chúng tôi sẽ gửi thông tin xác nhận qua email.</p>
+    </div>
+</div>
+
+<script>
+    $('#ticketForm').on('submit', function(event) {
+        event.preventDefault(); // Ngăn chặn hành động mặc định của form
+        $('#purchaseConfirmation').show(); // Hiển thị thông báo xác nhận
+        $('#ticketForm')[0].reset(); // Reset form sau khi gửi
+    });
+</script>

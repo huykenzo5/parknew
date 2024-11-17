@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dịch Vụ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header {
+            padding: 10px 0;
+            text-align: center;
+            padding-left: 20px; /* Thêm khoảng cách cho bên trái */
+            padding-right: 20px; /* Thêm khoảng cách cho bên phải */
+        }
+        .footer {
+            padding: 10px 0;
+            text-align: center;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+        .service-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .service {
+            flex: 1 1 calc(30% - 20px);
+            margin: 10px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: box-shadow 0.3s;
+        }
+        .service:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .service img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        @media (max-width: 600px) {
+            .service {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Dịch Vụ Của Chúng Tôi</h1>
+</div>
+
+<div class="content">
+    <h2>Khám Phá Các Dịch Vụ</h2>
+    <div class="service-container">
+        
+        <div class="service">
+            <img src="images/guide-service.jpg" alt="Dịch vụ hướng dẫn">
+            <h3>Dịch Vụ Hướng Dẫn</h3>
+            <p>Chúng tôi cung cấp dịch vụ hướng dẫn chuyên nghiệp cho khách tham quan, giúp bạn khám phá mọi ngóc ngách của công viên.</p>
+        </div>
+
+        <div class="service">
+            <img src="images/food-service.jpg" alt="Dịch vụ ẩm thực">
+            <h3>Dịch Vụ Ẩm Thực</h3>
+            <p>Thưởng thức các món ăn đa dạng từ các quán ăn trong công viên, phục vụ từ đồ ăn nhanh đến món ăn đặc sản.</p>
+        </div>
+
+        <div class="service">
+            <img src="images/rental-service.jpg" alt="Dịch vụ cho thuê">
+            <h3>Dịch Vụ Cho Thuê</h3>
+            <p>Cung cấp dịch vụ cho thuê thiết bị như ghế tắm nắng, dù che và các thiết bị thể thao cho khách hàng.</p>
+        </div>
+
+        <div class="service">
+            <img src="images/event-planning.jpg" alt="Dịch vụ tổ chức sự kiện">
+            <h3>Dịch Vụ Tổ Chức Sự Kiện</h3>
+            <p>Chúng tôi tổ chức các sự kiện đặc biệt cho nhóm, công ty và các buổi tiệc sinh nhật.</p>
+        </div>
+
+        <div class="service">
+            <img src="images/safety-service.jpg" alt="Dịch vụ an toàn">
+            <h3>Dịch Vụ An Toàn</h3>
+            <p>Đội ngũ nhân viên được đào tạo bài bản về an toàn, đảm bảo an toàn cho tất cả khách hàng trong công viên.</p>
+        </div>
+
+        <div class="service">
+            <img src="images/transport-service.jpg" alt="Dịch vụ vận chuyển">
+            <h3>Dịch Vụ Vận Chuyển</h3>
+            <p>Cung cấp dịch vụ xe đưa đón từ các điểm trung tâm đến công viên để thuận tiện cho du khách.</p>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
