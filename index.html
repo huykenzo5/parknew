@@ -4,84 +4,154 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Công Viên Nước</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .footer {
+            display: flex; /* Sử dụng flexbox cho footer */
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+        }
+        .quick-contact {
+            flex: 1; /* Chiếm 1 phần không gian */
+            margin-right: 20px; /* Khoảng cách bên phải */
+        }
+        .map-container {
+            flex: 1; /* Chiếm 1 phần không gian */
+            display: flex; /* Sử dụng flex để sắp xếp bản đồ và logo */
+            align-items: flex-start; /* Căn chỉnh các phần tử lên trên cùng */
+        }
+        .map {
+            height: 150px; /* Chiều cao của bản đồ */
+            width: 100%; /* Chiều rộng của bản đồ */
+            margin-right: 20px; /* Khoảng cách giữa bản đồ và logo */
+        }
+        .map iframe {
+            width: 100%; /* Chiều rộng bản đồ */
+            height: 100%; /* Chiều cao bản đồ */
+            border: 0; /* Không viền */
+        }
+        .logos {
+            display: flex;
+            flex-direction: column; /* Sắp xếp theo chiều dọc */
+            justify-content: center; /* Căn giữa theo chiều dọc */
+            align-items: center; /* Căn giữa theo chiều ngang */
+            gap: 10px; /* Khoảng cách giữa các logo */
+        }
+        .logo-image {
+            width: 40px; /* Chiều rộng của hình ảnh logo */
+            height: 40px; /* Chiều cao của hình ảnh logo */
+            border-radius: 50%; /* Làm cho hình ảnh thành hình tròn */
+            object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
+            animation: shake 0.5s infinite; /* Áp dụng hiệu ứng rung */
+            transition: box-shadow 0.3s ease; /* Hiệu ứng tỏa viền */
+        }
+        @keyframes shake {
+            0% { transform: translate(0); }
+            25% { transform: translate(-2px, 0); }
+            50% { transform: translate(2px, 0); }
+            75% { transform: translate(-2px, 0); }
+            100% { transform: translate(0); }
+        }
+        .logo-image:hover {
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Tỏa viền khi hover */
+        }
+    </style>
 </head>
 <body>
 
-    <div class="container">
-        <header class="header">
-            <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="Logo">
-            </a>
-            <div class="search">
-                <input type="text" id="searchInput" placeholder="Nhập từ khóa...">
-                <button id="searchButton"><i class="fas fa-search"></i></button>
+<div class="container">
+    <header class="header">
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Logo">
+        </a>
+        <div class="search">
+            <input type="text" id="searchInput" placeholder="Nhập từ khóa...">
+            <button id="searchButton"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="language">
+            <select id="languageSelect" onchange="changeLanguage()">
+                <option value="vi">Tiếng Việt</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <a href="#home" onclick="showContent('home.html')"><i class="fas fa-home"></i> Trang Chủ</a>
+        <a href="#services" onclick="showContent('services.html')"><i class="fas fa-concierge-bell"></i> Dịch Vụ</a>
+        <a href="#news" onclick="showContent('news.html')"><i class="fas fa-newspaper"></i> Tin Tức</a>
+        <a href="#about" onclick="showContent('about.html')"><i class="fas fa-info-circle"></i> Giới Thiệu</a>
+        <a href="#tickets" onclick="showContent('tickets.html')" class="buy-tickets"><i class="fas fa-ticket-alt"></i> Mua Vé</a>
+        <a href="#promotions" onclick="showContent('promotions.html')"><i class="fas fa-tags"></i> Khuyến Mãi</a>
+    </nav>
+
+    <main class="info" id="info">
+        <div class="loading">Đang tải nội dung...</div>
+    </main>
+
+    <footer class="footer">
+        <div class="quick-contact">
+            <h3>Liên Hệ Nhanh</h3>
+            <p>Email: <a href="mailto:huykenzo2005@gmail.com">huykenzo2005@gmail.com</a></p>
+            <p>Facebook: <a href="https://www.facebook.com/huykenzo5" target="_blank">Lê Nhật Huy</a></p>
+            <p>Địa Chỉ: 275 Beachway Keansburg</p>
+            <p>Giờ Mở Cửa: 8:00 AM - 6:00 PM hàng ngày</p>
+            <p>Liên Hệ: <a href="tel:+84328569010">+84 328 569 010</a></p>
+            <p>Trang Web: <a href="https://www.keansburgamusementpark.com" target="_blank">Keansburg Amusement Park</a></p>
+        </div>
+        <div class="map-container">
+            <div class="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3160.0528715474885!2d-74.10921428474118!3d40.44430397937088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c3f2c199f52e3f%3A0x7c1b4790c1b6c89f!2s275%20Beachway%20Ave%2C%20Keansburg%2C%20NJ%2007734%2C%20Hoa%20Kỳ!5e0!3m2!1svi!2s!4v1610000000000!5m2!1svi!2s"
+                    allowfullscreen=""
+                    loading="lazy">
+                </iframe>
             </div>
-            <div class="language">
-                <select id="languageSelect" onchange="changeLanguage()">
-                    <option value="vi">Tiếng Việt</option>
-                    <option value="en">English</option>
-                </select>
+            <div class="logos">
+                <a href="https://www.facebook.com/huykenzo5" target="_blank">
+                    <img src="images/facebook_logo.png" alt="Facebook" class="logo-image">
+                </a>
+                <a href="https://zalo.me/your_zalo_id" target="_blank">
+                    <img src="images/zalo_logo.png" alt="Zalo" class="logo-image">
+                </a>
+                <a href="tel:+84123456789">
+                    <img src="images/phone_logo.png" alt="Điện thoại" class="logo-image">
+                </a>
             </div>
-        </header>
+        </div>
+    </footer>
+</div>
 
-        <nav class="nav">
-            <a href="#home" onclick="showContent('home.html')"><i class="fas fa-home"></i> Trang Chủ</a>
-            <a href="#services" onclick="showContent('services.html')"><i class="fas fa-concierge-bell"></i> Dịch Vụ</a>
-            <a href="#news" onclick="showContent('news.html')"><i class="fas fa-newspaper"></i> Tin Tức</a>
-            <a href="#about" onclick="showContent('about.html')"><i class="fas fa-info-circle"></i> Giới Thiệu</a>
-            <a href="#tickets" onclick="showContent('tickets.html')" class="buy-tickets"><i class="fas fa-ticket-alt"></i> Mua Vé</a>
-            <a href="#promotions" onclick="showContent('promotions.html')"><i class="fas fa-tags"></i> Khuyến Mãi</a>
-        </nav>
-
-        <main class="info" id="info">
-            <div class="loading">Đang tải nội dung...</div>
-        </main>
-
-        <footer class="footer">
-            <div class="quick-contact">
-                <h3>Liên Hệ Nhanh</h3>
-                <p>Email: <a href="mailto:contact@congviennuoc.com">huykenzo2005@gmail.com</a></p>
-                <p>Facebook: <a href="https://www.facebook.com/huykenzo5">Lê Nhật Huy</a></p>
-                <p>Địa Chỉ: 275 Beachway Keansburg</p>
-                <p>Giờ Mở Cửa: 8:00 AM - 6:00 PM hàng ngày</p>
-            </div>
-            <p id="footerText">© 2024 Keansburg Amusement Park. Tất cả quyền được bảo lưu.</p>
-            <p>Liên Hệ: <a href="tel:+84123456789">+84 328 569 010</a></p>
-            <p>Trang Web: <a href="https://keansburgamusementpark.mypressonline.com/">Keansburg Amusement Park</a></p>
-        </footer>
-    </div>
-
-    <script>
-        function showContent(page) {
-            $('#info').fadeOut(200, function() {
-                $('#info').load(page, function() {
-                    $('#info').fadeIn(200);
-                });
+<script>
+    function showContent(page) {
+        $('#info').fadeOut(200, function() {
+            $('#info').load(page, function() {
+                $('#info').fadeIn(200);
             });
-        }
-
-        $(document).ready(function() {
-            showContent('home.html'); // Tải trang chủ khi mở
         });
+    }
 
-        function changeLanguage() {
-            // Hàm chuyển đổi ngôn ngữ (có thể thêm logic nếu cần)
-            alert("Chức năng chuyển đổi ngôn ngữ chưa được triển khai.");
+    $(document).ready(function() {
+        showContent('home.html'); // Tải trang chủ khi mở
+    });
+
+    function changeLanguage() {
+        // Hàm chuyển đổi ngôn ngữ (có thể thêm logic nếu cần)
+        alert("Chức năng chuyển đổi ngôn ngữ chưa được triển khai.");
+    }
+
+    $('#searchButton').click(function() {
+        const query = $('#searchInput').val();
+        if (query) {
+            // Hàm xử lý tìm kiếm (có thể thêm logic tìm kiếm)
+            alert("Tìm kiếm cho: " + query);
+        } else {
+            alert("Vui lòng nhập từ khóa tìm kiếm.");
         }
-
-        $('#searchButton').click(function() {
-            const query = $('#searchInput').val();
-            if (query) {
-                // Hàm xử lý tìm kiếm (có thể thêm logic tìm kiếm)
-                alert("Tìm kiếm cho: " + query);
-            } else {
-                alert("Vui lòng nhập từ khóa tìm kiếm.");
-                // first commit
-            }
-        });
-    </script>
+    });
+</script>
 </body>
 </html>
