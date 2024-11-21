@@ -1,17 +1,19 @@
-footer{
+footer {
     background-color: #2daf0f;
     color: #FFFFFF;
     /* padding-top: 25px; */
     padding-bottom: 25px;
 }
 
-footer a{
+footer a {
     color: #FFFFFF;
 }
-footer a:hover{
+
+footer a:hover {
     color: #FFFFFF;
 }
-footer h3{
+
+footer h3 {
     font-size: 22px;
     line-height: 1;
     /* margin-bottom: 15px; */
@@ -19,45 +21,53 @@ footer h3{
     text-transform: uppercase;
     font-weight: 500;
 }
-footer ul{
+
+footer ul {
     padding-left: 15px;
     padding-right: 15px;
 }
-footer li{
+
+footer li {
     margin-top: 10px;
     font-size: 14px;
     line-height: 1.4;
     list-style: none;
 }
-i{
-    margin-right: 20px;
+
+i {
     text-align: center;
     width: 20px;
 }
-#footer-contact{
+
+#footer-contact {
     background-color: #fc8888;
 }
-#contact{
+
+#contact {
     background-color: #734B6D;
     color: #FFFFFF;
     padding-bottom: 50px;
 }
-#contact a{
+
+#contact a {
     color: #FFFFFF;
 }
-#contact i{
+
+#contact i {
     color: #FFFFFF;
 }
-.follow-me{
+
+.follow-me {
     font-size: 40px;
     text-align: center;
 }
-.back-to-top{
+
+.back-to-top {
     position: fixed;
     bottom: 10px;
     right: 20px;
     font-size: 48px;
-    color: #734B6D;
+    color: black;
 }
 
 .row {
@@ -65,7 +75,7 @@ i{
     color: #082dfb;
     box-sizing: border-box;
     align-items: center;
-    display: flex;
+    display: -webkit-box;
     flex-flow: row;
     min-height: auto;
     position: relative;
@@ -75,9 +85,37 @@ i{
     padding-top: 0px;
     padding-bottom: 0px;
     text-align: left;
+    margin-right: 0px !important;
+    margin-left: 33px !important;
 }
 
-.col3 .col-inner h3{
+.col .medium-3 .small-12 .large-3 .col-inner h3 {
     text-align: left;
     margin: 0 0 10px;
+}
+
+.col-inner a {
+    text-decoration: none;
+}
+
+.mapouter {
+    position: relative;
+    text-align: right;
+}
+
+.gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+}
+
+
+a.back-to-top.ai-style-change-1 {
+    width: 40px;
+    height: 153.6px;
+    font-size: 96px;
+    left: 1419.2px;
+}
+
+a.back-to-top.ai-style-change-1 i.far.fa-arrow-alt-circle-up.ai-style-change-2 {
+    font-size: 96px;
 }
