@@ -1,0 +1,83 @@
+footer{
+    background-color: #2daf0f;
+    color: #FFFFFF;
+    /* padding-top: 25px; */
+    padding-bottom: 25px;
+}
+
+footer a{
+    color: #FFFFFF;
+}
+footer a:hover{
+    color: #FFFFFF;
+}
+footer h3{
+    font-size: 22px;
+    line-height: 1;
+    /* margin-bottom: 15px; */
+    color: navy;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+footer ul{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+footer li{
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    list-style: none;
+}
+i{
+    margin-right: 20px;
+    text-align: center;
+    width: 20px;
+}
+#footer-contact{
+    background-color: #fc8888;
+}
+#contact{
+    background-color: #734B6D;
+    color: #FFFFFF;
+    padding-bottom: 50px;
+}
+#contact a{
+    color: #FFFFFF;
+}
+#contact i{
+    color: #FFFFFF;
+}
+.follow-me{
+    font-size: 40px;
+    text-align: center;
+}
+.back-to-top{
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    font-size: 48px;
+    color: #734B6D;
+}
+
+.row {
+    line-height: 1.6;
+    color: #082dfb;
+    box-sizing: border-box;
+    align-items: center;
+    display: flex;
+    flex-flow: row;
+    min-height: auto;
+    position: relative;
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    text-align: left;
+}
+
+.col3 .col-inner h3{
+    text-align: left;
+    margin: 0 0 10px;
+}

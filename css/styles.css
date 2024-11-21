@@ -12,9 +12,9 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    /* max-width: 1600px; */
     margin: 0 auto;
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 /* Header */
@@ -78,9 +78,21 @@ body {
 }
 
 /* Main Content */
+.content {
+    display: flex;
+    flex-direction: column;
+}
+#services {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.grid-container {
+    display: flex !important;
+}
 .info {
     background: white;
-    padding: 20px;
+    /* padding: 20px; */
     border-radius: 5px;
     margin: 20px 0;
 }
@@ -91,6 +103,8 @@ body {
     padding: 20px;
     background: #007BFF;
     color: white;
+    display: flex; /* Sử dụng flexbox cho footer */
+    background-color: #4CAF50;
 }
 
 .footer a {
@@ -204,4 +218,48 @@ button:hover {
     height: auto;
     border-radius: 10px;
     margin: 20px 0;
+}
+.quick-contact {
+    flex: 1; /* Chiếm 1 phần không gian */
+    margin-right: 20px; /* Khoảng cách bên phải */
+}
+.map-container {
+    flex: 1; /* Chiếm 1 phần không gian */
+    display: flex; /* Sử dụng flex để sắp xếp bản đồ và logo */
+    align-items: flex-start; /* Căn chỉnh các phần tử lên trên cùng */
+}
+.map {
+    height: 150px; /* Chiều cao của bản đồ */
+    width: 100%; /* Chiều rộng của bản đồ */
+    margin-right: 20px; /* Khoảng cách giữa bản đồ và logo */
+}
+.map iframe {
+    width: 100%; /* Chiều rộng bản đồ */
+    height: 100%; /* Chiều cao bản đồ */
+    border: 0; /* Không viền */
+}
+.logos {
+    display: flex;
+    flex-direction: column; /* Sắp xếp theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều dọc */
+    align-items: center; /* Căn giữa theo chiều ngang */
+    gap: 10px; /* Khoảng cách giữa các logo */
+}
+.logo-image {
+    width: 40px; /* Chiều rộng của hình ảnh logo */
+    height: 40px; /* Chiều cao của hình ảnh logo */
+    border-radius: 50%; /* Làm cho hình ảnh thành hình tròn */
+    object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
+    animation: shake 0.5s infinite; /* Áp dụng hiệu ứng rung */
+    transition: box-shadow 0.3s ease; /* Hiệu ứng tỏa viền */
+}
+@keyframes shake {
+    0% { transform: translate(0); }
+    25% { transform: translate(-2px, 0); }
+    50% { transform: translate(2px, 0); }
+    75% { transform: translate(-2px, 0); }
+    100% { transform: translate(0); }
+}
+.logo-image:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Tỏa viền khi hover */
 }
