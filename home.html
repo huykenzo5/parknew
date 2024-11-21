@@ -1,165 +1,192 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trang Chủ Công Viên Nước</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        .header {
-            background-image: url('images/banner.jpg');
-            background-size: cover;
-            color: rgb(21, 241, 83);
-            text-align: center;
-            padding: 30px 20px;  /* Giảm padding để header không bị to quá */
-        }
-        .header img {
-            width: 150px;  /* Đặt kích thước logo */
-            height: auto;  /* Đảm bảo tỉ lệ khung hình */
-            margin-bottom: 20px;  /* Khoảng cách dưới logo */
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+      .header {
+        background-image: url("images/banner.jpg");
+        background-size: cover;
+        color: rgb(21, 241, 83);
+        text-align: center;
+        padding: 30px 20px; /* Giảm padding để header không bị to quá */
+      }
+      .header img {
+        width: 150px; /* Đặt kích thước logo */
+        height: auto; /* Đảm bảo tỉ lệ khung hình */
+        margin-bottom: 20px; /* Khoảng cách dưới logo */
+      }
+      .header h1 {
+        font-size: 2.2em; /* Giảm kích thước tiêu đề */
+        margin: 0; /* Xóa margin để căn chỉnh tốt hơn */
+      }
+      .nav {
+        background-color: #4caf50;
+        overflow: hidden;
+        display: flex; /* Sử dụng flexbox cho navbar */
+        justify-content: center; /* Căn giữa các liên kết */
+      }
+      .nav a {
+        padding: 10px 15px; /* Giảm khoảng cách giữa các liên kết */
+        color: white;
+        text-align: center;
+        text-decoration: none;
+      }
+      .nav a:hover {
+        background-color: #45a049;
+      }
+      .content {
+        padding: 20px;
+      }
+      .section {
+        margin: 20px 0;
+      }
+      .section-title {
+        text-align: center;
+        margin: 20px 0;
+        font-size: 2em;
+      }
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+      }
+      .card {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        overflow: hidden;
+        transition: transform 0.3s;
+      }
+      .card:hover {
+        transform: scale(1.05);
+      }
+      .card img {
+        width: 100%;
+        height: auto;
+      }
+      .card h3 {
+        text-align: center;
+        margin: 10px 0;
+      }
+      .card p {
+        padding: 0 10px 10px;
+        text-align: justify;
+      }
+      .footer {
+        background-color: #4caf50;
+        color: white;
+        text-align: center;
+        padding: 10px 0; /* Giảm padding để footer không bị to quá */
+      }
+      @media (max-width: 600px) {
         .header h1 {
-            font-size: 2.2em;  /* Giảm kích thước tiêu đề */
-            margin: 0;  /* Xóa margin để căn chỉnh tốt hơn */
+          font-size: 1.8em; /* Giảm kích thước tiêu đề trên di động */
         }
-        .nav {
-            background-color: #4CAF50;
-            overflow: hidden;
-            display: flex;  /* Sử dụng flexbox cho navbar */
-            justify-content: center;  /* Căn giữa các liên kết */
-        }
-        .nav a {
-            padding: 10px 15px;  /* Giảm khoảng cách giữa các liên kết */
-            color: white;
-            text-align: center;
-            text-decoration: none;
-        }
-        .nav a:hover {
-            background-color: #45a049;
-        }
-        .content {
-            padding: 20px;
-        }
-        .section {
-            margin: 20px 0;
-        }
-        .section-title {
-            text-align: center;
-            margin: 20px 0;
-            font-size: 2em;
-        }
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .card {
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-        .card:hover {
-            transform: scale(1.05);
-        }
-        .card img {
-            width: 100%;
-            height: auto;
-        }
-        .card h3 {
-            text-align: center;
-            margin: 10px 0;
-        }
-        .card p {
-            padding: 0 10px 10px;
-            text-align: justify;
-        }
-        .footer {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 10px 0;  /* Giảm padding để footer không bị to quá */
-        }
-        @media (max-width: 600px) {
-            .header h1 {
-                font-size: 1.8em;  /* Giảm kích thước tiêu đề trên di động */
-            }
-        }
+      }
     </style>
-</head>
-<body>
-<div class="nav">
-    <a href="#services">Dịch Vụ</a>
-    <a href="#events">Sự Kiện</a>
-    <a href="#testimonials">Khách Hàng Nói Gì</a>
-    <a href="#contact">Liên Hệ</a>
-</div>
+  </head>
+  <body>
+    <div class="nav">
+      <a href="#services">Dịch Vụ</a>
+      <a href="#events">Sự Kiện</a>
+      <a href="#testimonials">Khách Hàng Nói Gì</a>
+      <a href="#contact">Liên Hệ</a>
+    </div>
 
-<div class="content">
-    <div id="services" class="section">
+    <div class="content">
+      <div id="services" class="section">
         <h2 class="section-title">Dịch Vụ Của Chúng Tôi</h2>
         <div class="grid-container">
-            <div class="card">
-                <img src="images/guide-service.jpg" alt="Dịch vụ hướng dẫn">
-                <h3>Dịch Vụ Hướng Dẫn</h3>
-                <p>Khám phá công viên với các hướng dẫn viên chuyên nghiệp, giúp bạn có trải nghiệm tốt nhất.</p>
-            </div>
-            <div class="card">
-                <img src="images/food-service.jpg" alt="Dịch vụ ẩm thực">
-                <h3>Dịch Vụ Ẩm Thực</h3>
-                <p>Thưởng thức nhiều món ăn ngon từ các quán ăn trong công viên với thực đơn phong phú.</p>
-            </div>
-            <div class="card">
-                <img src="images/rental-service.jpg" alt="Dịch vụ cho thuê">
-                <h3>Dịch Vụ Cho Thuê</h3>
-                <p>Cung cấp thiết bị cho thuê như ghế tắm nắng và dụng cụ thể thao để bạn thoải mái vui chơi.</p>
-            </div>
+          <div class="card">
+            <img src="images/staff-training.jpg" alt="Dịch vụ hướng dẫn" />
+            <h3>Dịch Vụ Hướng Dẫn</h3>
+            <p>
+              Khám phá công viên với các hướng dẫn viên chuyên nghiệp, giúp bạn
+              có trải nghiệm tốt nhất.
+            </p>
+          </div>
+          <div class="card">
+            <img src="images/restaurent.jpg" alt="Dịch vụ ẩm thực" />
+            <h3>Dịch Vụ Ẩm Thực</h3>
+            <p>
+              Thưởng thức nhiều món ăn ngon từ các quán ăn trong công viên với
+              thực đơn phong phú.
+            </p>
+          </div>
+          <div class="card">
+            <img src="images/summer-festival.jpg" alt="Dịch vụ cho thuê" />
+            <h3>Dịch Vụ Cho Thuê</h3>
+            <p>
+              Cung cấp thiết bị cho thuê như ghế tắm nắng và dụng cụ thể thao để
+              bạn thoải mái vui chơi.
+            </p>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <div id="events" class="section">
+      <div id="events" class="section">
         <h2 class="section-title">Sự Kiện Đặc Biệt</h2>
         <div class="grid-container">
-            <div class="card">
-                <img src="images/summer-festival.jpg" alt="Lễ hội mùa hè">
-                <h3>Lễ Hội Mùa Hè</h3>
-                <p>Tham gia lễ hội mùa hè với nhiều hoạt động giải trí và các chương trình ưu đãi hấp dẫn.</p>
-            </div>
-            <div class="card">
-                <img src="images/halloween-event.jpg" alt="Sự kiện Halloween">
-                <h3>Sự Kiện Halloween</h3>
-                <p>Đón Halloween với các trò chơi thú vị và những trải nghiệm ma quái không thể quên!</p>
-            </div>
-            <div class="card">
-                <img src="images/new-year-celebration.jpg" alt="Đón chào năm mới">
-                <h3>Chương Trình Đón Chào Năm Mới</h3>
-                <p>Hòa mình vào không khí đón chào năm mới với các biểu diễn nghệ thuật và tiệc tùng hoành tráng.</p>
-            </div>
+          <div class="card">
+            <img src="images/summer-festival.jpg" alt="Lễ hội mùa hè" />
+            <h3>Lễ Hội Mùa Hè</h3>
+            <p>
+              Tham gia lễ hội mùa hè với nhiều hoạt động giải trí và các chương
+              trình ưu đãi hấp dẫn.
+            </p>
+          </div>
+          <div class="card">
+            <img src="images/haloween.jpg" alt="Sự kiện Halloween" />
+            <h3>Sự Kiện Halloween</h3>
+            <p>
+              Đón Halloween với các trò chơi thú vị và những trải nghiệm ma quái
+              không thể quên!
+            </p>
+          </div>
+          <div class="card">
+            <img src="images/hapy-new-year-event.jpg" alt="Đón chào năm mới" />
+            <h3>Chương Trình Đón Chào Năm Mới</h3>
+            <p>
+              Hòa mình vào không khí đón chào năm mới với các biểu diễn nghệ
+              thuật và tiệc tùng hoành tráng.
+            </p>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <div id="testimonials" class="section">
+      <div id="testimonials" class="section">
         <h2 class="section-title">Khách Hàng Nói Gì</h2>
         <div class="grid-container">
-            <div class="card">
-                <p>"Công viên thật tuyệt vời! Gia đình tôi đã có những khoảnh khắc không thể quên tại đây."</p>
-                <p>- Nguyễn Văn A</p>
-            </div>
-            <div class="card">
-                <p>"Dịch vụ rất chuyên nghiệp và thân thiện. Tôi sẽ quay lại vào mùa hè tới!"</p>
-                <p>- Trần Thị B</p>
-            </div>
-            <div class="card">
-                <p>"Một trải nghiệm tuyệt vời cho trẻ em và người lớn. Rất đáng để ghé thăm!"</p>
-                <p>- Lê Văn C</p>
-            </div>
+          <div class="card">
+            <p>
+              "Công viên thật tuyệt vời! Gia đình tôi đã có những khoảnh khắc
+              không thể quên tại đây."
+            </p>
+            <p>- Nguyễn Văn A</p>
+          </div>
+          <div class="card">
+            <p>
+              "Dịch vụ rất chuyên nghiệp và thân thiện. Tôi sẽ quay lại vào mùa
+              hè tới!"
+            </p>
+            <p>- Trần Thị B</p>
+          </div>
+          <div class="card">
+            <p>
+              "Một trải nghiệm tuyệt vời cho trẻ em và người lớn. Rất đáng để
+              ghé thăm!"
+            </p>
+            <p>- Lê Văn C</p>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-</body>
+  </body>
 </html>
